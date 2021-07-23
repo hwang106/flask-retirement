@@ -1,14 +1,13 @@
 /* ALL THE FONTS:  */
-/* TITLE: font-family: 'Cinzel Decorative', cursive;
-SUBTITLE: font-family: 'EB Garamond', serif;
-REGULAR TEXT: font-family: 'Encode Sans SC', sans-serif; */
+/* TITLE: font-family: 'Zen Tokyo Zoo', cursive; 
+ TEXT: font-family: 'Space Mono', monospace; */
 
 #title {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 25px; 
     padding: 5px;
-    padding-top: 8px;
-    padding-left: 13px;
+    padding-top: 10px;
+    padding-left: 20px;
     color: white;
 }
 
@@ -17,7 +16,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #5a6b34;
+    background-color: #002a3f;
     border-radius: 15px;
     }
 
@@ -28,7 +27,7 @@ li {
 li a {
     display: block;
     color: rgb(255, 255, 255);
-    font-family: 'EB Garamond', serif;
+    font-family: 'Space Mono', monospace; 
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -36,13 +35,13 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #925818;
+    background-color: #54d3c3;
     border-radius: 15px;
 }
 
 .active {
-    background-color: #faf1c2;
-    color: rgb(0, 0, 0);
+    background-color: #247693;
+    color: rgb(255, 255, 255);
 }
 
 
