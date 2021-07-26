@@ -1,53 +1,45 @@
-/* font-family: 'Cinzel Decorative', cursive;
-font-family: 'EB Garamond', serif;
-font-family: 'Encode Sans SC', sans-serif; */
+/* ALL THE FONTS:  */
+/* TITLE: font-family: 'Zen Tokyo Zoo', cursive; 
+ TEXT: font-family: 'Space Mono', monospace; */
 
 #title {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Zen Tokyo Zoo', cursive;
     font-size: 25px; 
     padding: 5px;
-    padding-top: 8px;
-    padding-left: 8px;
+    padding-top: 10px;
+    padding-left: 20px;
     color: white;
 }
 
 ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #5a6b34;
-            border-radius: 15px;
-        }
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2d779c;
+    border-radius: 15px;
+    }
 
-        li {
-            float: left;
-            
-        }
+li {
+    float: left;
+}
 
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-family: 'EB Garamond', serif;
-            border-radius: 15px;
-        }
+li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-family: 'Space Mono', monospace; 
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    border-radius: 15px;
+}
 
-        li a:hover:not(.active) {
-            background-color: #925818;
-            border-radius: 15px;
-        }
+li a:hover:not(.active) {
+    background-color: #54d3c3;
+    border-radius: 15px;
+}
 
-        .active {
-            background-color: #faf1c2;
-            color: rgb(0, 0, 0)
-        }
-
-
-
-
-
-
- 
+.active {
+    background-color: #bababa;
+    color: rgb(255, 255, 255);
+}

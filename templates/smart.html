@@ -1,59 +1,52 @@
 <html>
 
 <head>
-    <title>SMART Goals</title>
+    <title>Smart</title>
     <link rel="stylesheet" href="../static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=EB+Garamond&family=Encode+Sans+SC:wght@200&display=swap"
-        rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../static/my.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
-
+        body {
+            background-color: #bababa;
+        }
         :root {
             --d: 700ms;
             --e: cubic-bezier(0.19, 1, 0.22, 1);
-            --font-sans: 'Rubik', sans-serif;
-            --font-serif: 'Cardo', serif;
+            --font-family: 'EB Garamond', serif;
+            --font-family: 'Encode Sans SC', sans-serif;
         }
-
         * {
             box-sizing: border-box;
         }
-
         html,
         body {
             height: 100%;
         }
-
-        body {
-            display: grid;
-            place-items: center;
-        }
-
+        
         .page-content {
+            place-items: center;
             display: grid;
             grid-gap: 1rem;
             padding: 1rem;
             max-width: 1024px;
             margin: 0 auto;
-            font-family: var(--font-sans);
+            font-family: 'Zen Tokyo Zoo', cursive;
         }
-
         @media (min-width: 600px) {
             .page-content {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
         @media (min-width: 800px) {
             .page-content {
                 grid-template-columns: repeat(4, 1fr);
             }
         }
-
         .card {
             position: relative;
             display: flex;
@@ -66,13 +59,11 @@
             background-color: whitesmoke;
             box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1), 0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1), 0 16px 16px rgba(0, 0, 0, 0.1);
         }
-
         @media (min-width: 600px) {
             .card {
                 height: 350px;
             }
         }
-
         .card:before {
             content: '';
             position: absolute;
@@ -85,7 +76,6 @@
             transition: transform calc(var(--d) * 1.5) var(--e);
             pointer-events: none;
         }
-
         .card:after {
             content: '';
             display: block;
@@ -99,23 +89,18 @@
             transform: translateY(-50%);
             transition: transform calc(var(--d) * 2) var(--e);
         }
-
         .card:nth-child(1):before {
-            background-image: url(https://images.unsplash.com/photo-1517021897933-0e0319cfbc28?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
-
         .card:nth-child(2):before {
-            background-image: url(https://images.unsplash.com/photo-1533903345306-15d1c30952de?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
-
         .card:nth-child(3):before {
-            background-image: url(https://images.unsplash.com/photo-1545243424-0ce743321e11?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
-
         .card:nth-child(4):before {
-            background-image: url(https://images.unsplash.com/photo-1531306728370-e2ebd9d7bb99?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
-
         .content {
             position: relative;
             display: flex;
@@ -126,25 +111,154 @@
             transition: transform var(--d) var(--e);
             z-index: 1;
         }
-
         .content>*+* {
             margin-top: 1rem;
         }
-
         .title {
             font-size: 1.3rem;
             font-weight: bold;
             line-height: 1.2;
         }
-
         .copy {
-            font-family: var(--font-serif);
+            font-family: 'Space Mono', monospace;
             font-size: 1.125rem;
             font-style: italic;
             line-height: 1.35;
         }
-
-        .btn {
+        @media (hover: hover) and (min-width: 600px) {
+            .card:after {
+                transform: translateY(0);
+            }
+            .content {
+                transform: translateY(calc(100% - 4.5rem));
+            }
+            .content>*:not(.title) {
+                opacity: 0;
+                transform: translateY(1rem);
+                transition: transform var(--d) var(--e), opacity var(--d) var(--e);
+            }
+            .card:hover,
+            .card:focus-within {
+                align-items: center;
+            }
+            .card:hover:before,
+            .card:focus-within:before {
+                transform: translateY(-4%);
+            }
+            .card:hover:after,
+            .card:focus-within:after {
+                transform: translateY(-50%);
+            }
+            .card:hover .content,
+            .card:focus-within .content {
+                transform: translateY(0);
+            }
+            .card:hover .content>*:not(.title),
+            .card:focus-within .content>*:not(.title) {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: calc(var(--d) / 8);
+            }
+            .card:focus-within:before,
+            .card:focus-within:after,
+            .card:focus-within .content,
+            .card:focus-within .content>*:not(.title) {
+                transition-duration: 0s;
+            }
+        }
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            border-radius: 15px;
+        }
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #faf1c2;
+            border-radius: 15px;
+            margin: auto;
+            padding: 0;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        @keyframes animatetop {
+            from {
+                top: -300px;
+                opacity: 0
+            }
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: #925818;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5a6b34;
+            color: white;
+            border-radius: 14px;
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        .modal-body {
+            padding: 2px 16px;
+            border-radius: 15px;
+            background-color: #faf1c2;
+            font-family: 'EB Garamond', serif;
+        }
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #d7b740;
+            color: white;
+            border-radius: 15px;
+            font-family: 'Encode Sans SC', sans-serif;
+        }
+        .modal-button {
             cursor: pointer;
             margin-top: 1.5rem;
             padding: 0.75rem 1.5rem;
@@ -153,78 +267,27 @@
             letter-spacing: 0.025rem;
             text-transform: uppercase;
             color: white;
-            background-color: black;
+            background-color: #925818;
             border: none;
         }
-
-        .btn:hover {
-            background-color: #0d0d0d;
+        .modal-button:hover {
+            background-color: #ab7f24;
         }
-
-        .btn:focus {
-            outline: 1px dashed yellow;
+        .modal-button:focus {
+            outline: 1px dashed #f0d64e;
             outline-offset: 3px;
         }
-
-        @media (hover: hover) and (min-width: 600px) {
-            .card:after {
-                transform: translateY(0);
-            }
-
-            .content {
-                transform: translateY(calc(100% - 4.5rem));
-            }
-
-            .content>*:not(.title) {
-                opacity: 0;
-                transform: translateY(1rem);
-                transition: transform var(--d) var(--e), opacity var(--d) var(--e);
-            }
-
-            .card:hover,
-            .card:focus-within {
-                align-items: center;
-            }
-
-            .card:hover:before,
-            .card:focus-within:before {
-                transform: translateY(-4%);
-            }
-
-            .card:hover:after,
-            .card:focus-within:after {
-                transform: translateY(-50%);
-            }
-
-            .card:hover .content,
-            .card:focus-within .content {
-                transform: translateY(0);
-            }
-
-            .card:hover .content>*:not(.title),
-            .card:focus-within .content>*:not(.title) {
-                opacity: 1;
-                transform: translateY(0);
-                transition-delay: calc(var(--d) / 8);
-            }
-
-            .card:focus-within:before,
-            .card:focus-within:after,
-            .card:focus-within .content,
-            .card:focus-within .content>*:not(.title) {
-                transition-duration: 0s;
-            }
+        .form-text-box {
+            padding-left: 8px;
+            width: 700px;
+            height: 50px;
+            overflow:scroll;
         }
     </style>
-
-
-
-
-
-
 </head>
 
 <body>
+                    <!---------- NAV BAR  ---------->
     <div class="nav-bar">
         <ul>
             <li><a href="index.html"><i> ← </i></a></li>
@@ -235,37 +298,208 @@
         </ul>
     </div>
 
+    <br>
+    <br>
+    <br>
+
+
+
+                    <!---------- ACTION CARDS  ---------->
 
     <main class="page-content">
         <div class="card">
             <div class="content">
+                <h2 class="title">Scratchpad</h2>
+                <p class="copy">Plan your thoughts out</p>
+                <button class="modal-button" href="#myModal4">plan</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="content">
                 <h2 class="title">Create Goal</h2>
-                <p class="copy">Big or small, goal setting is the first step towards finacial security</p>
-                <button class="btn">Create</button>
+                <p class="copy">Big or small, goal setting is the first step towards financial security.</p>
+                <button class="modal-button" href="#myModal1">create</button>
             </div>
         </div>
         <div class="card">
             <div class="content">
                 <h2 class="title">Current Goals</h2>
-                <p class="copy">The past is history, the future is a mystery, today is a gift, thats why its called the present.</p>
-                <button class="btn">View</button>
+                <p class="copy">The past is history. The future is a mystery. Today is a gift, that's why it's called
+                    the present.</p>
+                <button class="modal-button" href="#myModal2">view</button>
             </div>
         </div>
         <div class="card">
             <div class="content">
                 <h2 class="title">Completed Goals</h2>
                 <p class="copy">You accomplished this! Period sis!</p>
-                <button class="btn">Reflect</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h2 class="title">Scratchpad</h2>
-                <p class="copy">Plan you thoughts out!</p>
-                <button class="btn">Plan</button>
+                <button class="modal-button" href="#myModal3">reflect</button>
             </div>
         </div>
     </main>
-</body>
+                    <!------------- MODALS ------------>
 
+    <!-- MODAL ONE -->
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Create a SMART Goal:</h2>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="/lists/new">
+                    <br>
+
+                    <label for="new_goal">S: Enter your SPECIFIC goal:</label>
+                    <input type="text" class="form-text-box" name="new_goal" value="">
+
+                    <br><br>
+
+                    <label for="new_measure">M: How will you MEASURE your goal?</label>
+                    <input type="text" class="form-text-box" name="new_measure" value="">
+
+                    <br><br>
+
+                    <label for="new_achieveable">A: Is your goal ACHIEVEABLE?</label>  <br>
+                          <input type="radio" id="yes" name="new_achieveable" value="yes">
+                          <label for="yes">undoubtedly yes</label><br>
+                          <input type="radio" id="no" name="new_achieveable" value="no">
+                          <label for="no">i'm unsure at this point</label><br>
+
+                    <br><br>
+
+                    <label for="new_realistic">R: Is your goal REALISTIC?</label>  <br>
+                          <input type="radio" id="yes" name="new_realistic" value="yes">
+                          <label for="yes">undoubtedly yes</label><br>
+                          <input type="radio" id="no" name="new_realistic" value="no">
+                          <label for="no">i'm unsure at this point</label><br>
+
+                    <br><br>
+
+                    <label for="new_time">T: How much TIME will it take to complete your goal?</label>
+                    <input type="date" name="new_time" value="">
+
+                    <br><br>
+
+                    <label for="new_time">Add additional notes:</label>
+                    <input type="text" class="form-text-box" name="new_time" value="">
+
+                    <br><br>
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <h3>Modal Footer</h3>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 2 -->
+    <!-- Trigger/Open The Modal -->
+    <!-- The Modal -->
+    <div id="myModal2" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p>SomeDFKJDFHLDFLDFy</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3> DLFKJLSDFJLDSHFFooter</h3>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 3 -->
+    <!-- Trigger/Open The Modal -->
+    <!-- The Modal -->
+    <div id="myModal3" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <p>SomeDFKJDFHLDFLDFy</p>
+                <p>Some other text...</p>
+            </div>
+            <div class="modal-footer">
+                <h3> D3333333ooter</h3>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL 4 -->
+    <!-- Trigger/Open The Modal -->
+    <!-- The Modal -->
+    <div id="myModal4" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Modal Header</h2>
+            </div>
+            <div class="modal-body">
+                <div class="center" id="cntr">
+                    <div class="header">
+                        <br>
+                        <h2>Add an item</h2>
+                        <input type="text" id="userInput" style="width: 100%;" placeholder="Add new task...">
+                        <br>
+                        <span style="cursor: pointer;" id="addBtn">Add</span>
+                        <br>
+                    </div>
+                    <ol style="list-style-type:none" id="cntr_list">
+                        <br>
+                        <li><label><input type="checkbox" value="ON" class="test" /> Item 1</label></li>
+                        <br>
+                        <li><label><input type="checkbox" value="ON" class="test" /> Item 2</label></li>
+                        <br>
+                        <li><label><input type="checkbox" value="ON" class="test" /> Item 3</label></li>
+                        <br>
+                        <li><label><input type="checkbox" value="ON" class="test" /> Item 4</label></li>
+                        <br>
+                        <li><label><input type="checkbox" value="ON" class="test" /> Item 5</label></li>
+                        <br>
+                    </ol>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <h3> DLFKJLSDFJLDSHFFooter</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Get the button that opens the modal
+        var btn = document.querySelectorAll("button.modal-button");
+
+        // All page modals
+        var modals = document.querySelectorAll('.modal');
+        // Get the <span> element that closes the modal
+        var spans = document.getElementsByClassName("close");
+        // When the user clicks the button, open the modal
+        for (var i = 0; i < btn.length; i++) {
+            btn[i].onclick = function (e) {
+                e.preventDefault();
+                modal = document.querySelector(e.target.getAttribute("href"));
+                modal.style.display = "block";
+            }
+        }
+        // When the user clicks on <span> (x), close the modal
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].onclick = function () {
+                for (var index in modals) {
+                    if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
 </html>
