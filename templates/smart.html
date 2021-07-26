@@ -9,12 +9,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../static/my.js"></script>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=EB+Garamond&family=Encode+Sans+SC:wght@200&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&family=Zen+Tokyo+Zoo&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #e8b44e;
+            background-color: #bababa;
         }
         :root {
             --d: 700ms;
@@ -29,17 +27,15 @@
         body {
             height: 100%;
         }
-        body {
-            display: grid;
-            place-items: center;
-        }
+        
         .page-content {
+            place-items: center;
             display: grid;
             grid-gap: 1rem;
             padding: 1rem;
             max-width: 1024px;
             margin: 0 auto;
-            font-family: 'EB Garamond', serif;
+            font-family: 'Zen Tokyo Zoo', cursive;
         }
         @media (min-width: 600px) {
             .page-content {
@@ -94,16 +90,16 @@
             transition: transform calc(var(--d) * 2) var(--e);
         }
         .card:nth-child(1):before {
-            background-image: url(https://images.photowall.com/products/52423/old-vintage-world-map.jpg?h=699&q=85);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
         .card:nth-child(2):before {
-            background-image: url(https://cdn.wallpapersafari.com/88/58/xrfk18.jpg);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
         .card:nth-child(3):before {
-            background-image: url(https://data.whicdn.com/images/321765412/original.jpg);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
         .card:nth-child(4):before {
-            background-image: url(https://www.legendsofamerica.com/wp-content/uploads/2017/10/treasure.jpg);
+            background-image: url(https://i.ibb.co/Qr8PWFj/space.jpg);
         }
         .content {
             position: relative;
@@ -124,7 +120,7 @@
             line-height: 1.2;
         }
         .copy {
-            font-family: 'Encode Sans SC', sans-serif;
+            font-family: 'Space Mono', monospace;
             font-size: 1.125rem;
             font-style: italic;
             line-height: 1.35;
@@ -302,9 +298,23 @@
         </ul>
     </div>
 
+    <br>
+    <br>
+    <br>
+
+
+
                     <!---------- ACTION CARDS  ---------->
 
     <main class="page-content">
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Scratchpad</h2>
+                <p class="copy">Plan your thoughts out</p>
+                <button class="modal-button" href="#myModal4">plan</button>
+            </div>
+        </div>
+        
         <div class="card">
             <div class="content">
                 <h2 class="title">Create Goal</h2>
@@ -325,13 +335,6 @@
                 <h2 class="title">Completed Goals</h2>
                 <p class="copy">You accomplished this! Period sis!</p>
                 <button class="modal-button" href="#myModal3">reflect</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="content">
-                <h2 class="title">Scratchpad</h2>
-                <p class="copy">Plan your thoughts out</p>
-                <button class="modal-button" href="#myModal4">plan</button>
             </div>
         </div>
     </main>
