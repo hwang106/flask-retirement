@@ -6,18 +6,14 @@ body, html {
   flex-direction: column;
   justify-content: center; 
 }
-
 .size {
-    margin-left: 300px;
-    padding-top: 50px;
-    height: 650px;
-    width: 700px;
-    flex-direction: column;
-  justify-content: center; 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 50px;
 }
-
 .controls {
-  padding-top: 100px; 
+  padding-top: 70px;
   position: fixed;
   z-index: 10;
   font-size: 0;
@@ -53,7 +49,6 @@ body, html {
     .controls button.clicked {
       transition: none;
       background-color: #52D1C5; }
-
 svg {
   max-width: 100vw;
   max-height: 100vh;
@@ -106,13 +101,11 @@ svg {
       animation-delay: -3s; }
     svg #sun #rays #ray_4_ {
       animation-delay: -4s; }
-
 @keyframes bounce {
   from {
     transform: translate3d(0, 0, 0); }
   to {
     transform: translate3d(0, -200px, 0); } }
-
 @keyframes comet {
   0% {
     transform: translate3d(0, 0, 0);
@@ -123,25 +116,21 @@ svg {
   100% {
     opacity: 0;
     transform: translate3d(-600px, 475px, 0); } }
-
 @keyframes galactic {
   from {
     stroke-dashoffset: 0; }
   to {
     stroke-dashoffset: 5; } }
-
 @keyframes earthrotation {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(360deg); } }
-
 @keyframes sundance {
   from {
     transform: rotate(0deg); }
   to {
     transform: rotate(6deg); } }
-
 @keyframes shining {
   0% {
     transform: scale(1); }
@@ -151,8 +140,6 @@ svg {
     transform: scale(0.8); }
   100% {
     transform: scale(1); } }
-
-
 ul {
     list-style-type: none;
     margin: 0;
@@ -160,12 +147,18 @@ ul {
     overflow: hidden;
     border-radius: 15px;
     background-color: #2d779c;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    margin-top: 30px;
+    z-index: 9;
+    margin: 30px;
     }
-
 li {
     float: left;
 }
-
 li a {
     display: block;
     color: rgb(255, 255, 255);
@@ -175,37 +168,246 @@ li a {
     text-decoration: none;
     border-radius: 15px;
 }
-
 li a:hover:not(.active) {
     background-color: #54d3c3;
     border-radius: 15px;
 }
-
 .active {
     background-color: #bababa;
     color: rgb(255, 255, 255);
 }
-
-
-.vertical-nav-bar {
+.list-group {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 200px;
-    background-color: #f1f1f1;
+    background-color: #ff8a8a;
     }
-
-.vert-li a {
+.vert-li {
     display: block;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
     }
-
 /* Change the link color on hover */
-.vert-li a:hover {
+.vert-li:hover {
     background-color: #555;
     color: white;
     }
+
+
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    border-radius: 15px;
+}
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #faf1c2;
+    border-radius: 15px;
+    margin: auto;
+    padding: 0;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+/* Add Animation */
+@-webkit-keyframes animatetop {
+from {
+    top: -300px;
+    opacity: 0
+}
+to {
+    top: 0;
+    opacity: 1
+}
+}
+@keyframes animatetop {
+from {
+    top: -300px;
+    opacity: 0
+}
+to {
+    top: 0;
+    opacity: 1
+}
+}
+/* The Close Button */
+.close {
+color: white;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+.close:hover,
+.close:focus {
+color: #925818;
+text-decoration: none;
+cursor: pointer;
+}
+.modal-header {
+padding: 2px 16px;
+background-color: #5a6b34;
+color: white;
+border-radius: 14px;
+font-family: 'Cinzel Decorative', cursive;
+}
+.modal-body {
+padding: 2px 16px;
+border-radius: 15px;
+background-color: #faf1c2;
+font-family: 'EB Garamond', serif;
+}
+.modal-footer {
+padding: 2px 16px;
+background-color: #d7b740;
+color: white;
+border-radius: 15px;
+font-family: 'Encode Sans SC', sans-serif;
+}
+.modal-button {
+cursor: pointer;
+padding: 0.3rem 0.9rem;
+font-size: 0.9rem;
+font-weight: bold;
+text-align: center;
+padding-left: 10px;
+text-transform: uppercase;
+color:#2d779c;
+background-color: #ffe96d;
+border-radius: 150px;
+border: none;
+width: 15px;
+font-family: 'Space Mono', monospace;
+}
+#row {
+    display: flex; 
+    flex-direction: row;
+    align-content: flex-start;
+}
+.modal-button:hover {
+background-color: #ab7f24;
+}
+.modal-button:focus {
+outline: 1px dashed #f0d64e;
+outline-offset: 3px;
+}
+.form-text-box {
+padding-left: 8px;
+width: 700px;
+height: 50px;
+overflow:scroll;
+}
+
+#myModal1 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal2 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal3 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal4 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal5 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal6 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal7 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal8 {
+    z-index: 9;
+    position: absolute;
+}
+#myModal9 {
+    z-index: 9;
+    position: absolute;
+}
+
+
+#goal1{ 
+    transform: translate(999%, 1100%);
+    z-index: 9;
+    position: absolute;
+}
+#goal2{ 
+    transform: translate(1599%, 1500%);
+    z-index: 9;
+    position: absolute;
+}
+#goal3{ 
+    transform: translate(1899%, 1000%);
+    z-index: 9;
+    position: absolute;
+}
+#goal4{ 
+    transform: translate(2600%, 800%);
+    z-index: 9;
+    position: absolute;
+}
+#goal5{ 
+    transform: translate(3000%, 1300%);
+    z-index: 9;
+    position: absolute;
+}
+#goal6{ 
+    transform: translate(3400%, 1700%);
+    z-index: 9;
+    position: absolute;
+}
+#goal7{ 
+    transform: translate(3800%, 1900%);
+    z-index: 9;
+    position: absolute;
+}
+#goal8{ 
+    transform: translate(4300%, 1400%);
+    z-index: 9;
+    position: absolute;
+}
+#goal9{ 
+    transform: translate(4300%, 600%);
+    z-index: 9;
+    position: absolute;
+}
+
+
+
+
 
 
