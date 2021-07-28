@@ -1,4 +1,4 @@
-# ---- adding test comment YOUR APP STARTS HERE ----
+# ---- adding test comment2 YOUR APP STARTS HERE ----
 # -- Import section --
 from flask import Flask
 from flask import render_template
